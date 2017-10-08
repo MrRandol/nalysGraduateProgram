@@ -1,0 +1,1507 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jqcloud.css" />
+		<link rel="stylesheet" type="text/css" href="css/bubbles.css" />
+	</head>
+	<body>
+
+<!--
+	Time spent : 
+	04/10 : 1h
+	06/10: 1h
+	week end 07-08/10 : 3h
+-->
+
+
+<!--
+
+	Références actuelles :
+	http://www.agiliste.fr/introduction-methodes-agiles/
+		bon squelette
+		overview intéressant
+	http://blog.d2-si.fr/2014/04/18/introduction-agile/
+		schémas intéressants (cascade, pyramide couts/périmetre/delai)
+		quotes sympa
+		"Les 4 valeurs essentielles du monde agile" à caler après le manifesto
+		"Les différentes méthodes agiles" pour approcher autres que scrum (et attention safe)
+
+		https://fr.slideshare.net/gcollic/introduction-aux-mthodes-agiles-15590965
+		https://fr.slideshare.net/RenaudBrosse/support-de-formation-agilit
+			slides à lire
+
+-->
+		<!--
+		###########################################
+							SLIDES
+		###########################################
+		-->
+		<div id="cover-footer" style="position:absolute;bottom: 0; left:0; right:0; width: 100%; height: 60px; background-color:#444">
+			<p style="line-height: 60px; vertical-align: middle; margin-top: 0;  margin-left: 25px; font-size: 0.35em;float: left">
+				Java Graduate Program - 2017/10/20 - Introduction to Agile & DevOps
+			</p>
+			<img src="./assets/nalys.png" style="border: none; box-shadow: none; float: right; height: 60px; width: 60px; background: none;margin-right:50px" />
+		</div>
+
+		<div class="reveal">
+			<div class="slides">
+				<!--
+				###########################################
+								INTRO & PRESENTATION
+				###########################################
+				-->
+				<!-- COVER -->
+				<section id="cover" data-timing="60">
+					<h2>An introduction to <br/> Agile & Devops</h2>
+					<h4> - </h4>
+					<h4>Nalys Java Graduate Program</h4>
+					<aside class="notes">
+						Happy to be here ?
+						How is the graduate going ?
+						Who are you ?
+					</aside>
+				</section>
+				
+				<!-- MY PRESENTATION -->
+				<section id="hi" data-timing="60" style="line-height:1em;">
+					<h2 >Hi !</h2>
+					<img id="hi" src="./assets/42.jpg" style="border: none; box-shadow: none; float: left; height: 300px; width: 300px; border-radius:50%;" />
+					<ul>
+						<li>Maxime Choffat</li>
+						<ul style="margin-bottom: 0.5em;">
+							<li>IT Consultant <a href="https://twitter.com/nalysgroup">@NalysGroup</a></li>
+							<li>GIS Specialist</li>
+							<li>Agile & DevOps enthousiast</li>
+							<li><i class="fa fa-gamepad" aria-hidden="true"></i> Games lover</li>
+						</ul>
+						<li>Contact :</li>
+						<ul>
+							<li><i class="fa fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/Mr_Randol">Mr_Randol</a></li>
+							<li><i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/MrRandol">MrRandol</a></li>
+							<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:maxime.choffat@gmail.com">maxime.choffat@gmail.com</a></li>
+						</ul>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Worked 5 years in France for GPP</li>
+							<li>Been in agle since first internship : Kanban, sprints, Spikes, XP, retro ...</li>
+							<li>Transformed a team from unorganized agile-ish to efficient through lean/agile/devops</li>
+						<ul>
+					</aside>
+				</section>
+
+				<section id="how-about-you" data-timing="400" style="line-height:1.2em;">
+					<h2 style="margin-bottom: 35px;">How about you ?</h2>
+					<aside class="notes">
+						<ul>
+							<li>name ?</li>
+							<li>Studies ?</li>
+							<li>Future perspectives ?</li>
+							<li>Domain ? technology</li>
+							<li>Why here ?</li>
+						<ul>
+					</aside>
+				</section>
+
+
+				<!--
+				###########################################
+							PART 1 : RULES OF THE DAY
+				###########################################
+				-->
+
+				<section data-timing="80" id="presentation-rules">
+					<h3>
+						Rules for today :
+					</h3>
+					<ul>
+						<li class="fragment">Hint, preview</li>
+						<li class="fragment">Genuinely subjective</li>
+						<li class="fragment">Questions welcomed !</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>1. Preview : not exhaustive (cannot be)</li>
+							<li>2. Agile & Devops imply personnal comprehension => not objective</li>
+							<li>3. NO stupid question</li>
+							<li>3. Any Time</li>
+							<li>3. Here to chat about subject so everyone gets a feel about it</li>
+						<ul>
+					</aside>
+				</section>
+
+				<section data-timing="80" id="presentation-rules2">
+					<i>Today is about approahes and ways of thinking</i>
+				</section>
+
+				<section data-timing="60" id="presentation-rules">
+					<h3>
+						Planning
+					</h3>
+					<ul>
+						<li class="fragment">Morning : Agile</li>
+						<li class="fragment">Afternoon : DevOps</li>
+						<li class="fragment">Evening : <s>Beers</s></li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<!--
+				###########################################
+								PART 2 : AGILE OVERVIEW
+				###########################################
+				-->
+				<section id="agile" data-timing="240">
+					<h3>Agile</h3>
+				</section>
+
+				<section id="agility" data-timing="240">
+					<video id="agilityVideo" loop src="./assets/agility.mp4">
+				</section>
+
+				<section id="agile-infrastructure">
+					<h3>The Agile infrastructure</h3>
+
+
+					<div id="ai-business" class="fragment" data-fragment-index="2" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative">BUSINESS </div>
+
+					<div id="ai-agile" class="fragment" data-fragment-index="4" style="z-index: 1; background-color: orange; margin: -130px auto; border-radius: 125px; width: 500px; height: 220px; vertical-align: middle; line-height: 220px;"> AGILE </div>
+
+					<div id="ai-dev" class="fragment" data-fragment-index="1" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative"> DEVELOPMENT </div>
+
+					<div id="ai-ops" class="fragment" data-fragment-index="3" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative"> OPERATIONS </div>
+
+					<img class="fragment" id="business" data-fragment-index="2" src="./assets/business.png" style="background: none;z-index: 11;left:0; top: 80px;height: 250px;position:absolute; border: none; box-shadow: none" />
+					<img class="fragment" id="developer" data-fragment-index="1" src="./assets/developer.png" style="background: none;z-index: 11;right:0; top: 280px;height: 250px;position:absolute; border: none; box-shadow: none" />
+					<img class="fragment" id="operational" data-fragment-index="3" src="./assets/operational.png" style="background: none;z-index: 11;left:0; top: 480px;height: 250px;position:absolute; border: none; box-shadow: none" />
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="not-v-cycle" data-timing="60">
+					<h3>Agile ? </h3>
+					<ul>
+						<li class="fragment">Change from tradictional project management (V, waterfall ...)</li>
+						<li class="fragment">Change from <b>"Project management"</b> to <b>"Product management"</b></li>
+						<li class="fragment"><b>Team Oriented</b></li>
+						<li class="fragment">Specifications "on the fly"</li>
+					</ul>
+
+					<aside class="notes">
+						1. Counter classical project management methods, because seen as desastrous
+						(Tunnel effect, needs changes, perimeter overflow, tensions, etc ...)
+
+						2. Even th Project Management notion is changed to put the product in the center and avoid a comeback to bad methods
+							=> we think product, not project
+							=> objective : give birth to a product
+
+						3.  Classical approch : 
+							- Client defines everything in the tiniest details
+							- Validation of those 
+							- no room (of so little) for change
+							- Construction while client and team are blind
+							- => Client stresses
+							- => team finished often in pain
+							- TUNNEL EFFECT
+							- Tensions, conflicts because end product is not expected product 
+							- change of need, bad communication ...
+							- often useless demands, but done because sold
+							- On the contrary mandatory/very useful things forgotten to give product more value
+
+
+						=> solution : we build the perimeter little by little and make it evolve so the client sees it and is happy
+					</aside>
+				</section>
+
+				<section id="brussels-moscow" data-timing="50">
+					<h3>From Brussels To Moscow ...</h3>
+					<ul>
+						<li class="fragment">Plan the trip as precisely as possible</li>
+						<li class="fragment">You need to plan and anticipate everything</li>
+						<li class="fragment">10 minutes</li>
+					</ul>
+					<aside class="notes">
+					10 minutes to give me your trip 
+						- how you get out of brussels
+						- where do you eat ?
+						- how much € ?
+						- what if road closed ?
+						- what if breakdown in the middle ?
+						...
+	
+						Les méthodes agiles partent du principe que spécifier et planifier dans les détails l'intégralité d'un produit avant de le développer (approche prédictive) est contre productif. Cela revient à planifier dans les détails un trajet "Paris - Narbonne" en voiture par les petites routes. Spécifiant chaque villes et villages traversés, l'heure de passage associée, chaque rue empruntée dans les agglomérations, litres d'essence consommés, kilomètres parcourus, etc. Les imprévus ne manqueront pas d'arriver : embouteillages, déviations, travaux, sens de circulation inversés, voire la panne, etc. Rendant votre planification et vos spécifications très vite obsolètes. Combien de temps aurez vous passé à planifier cet itinéraire, comment réagirez vous face à vos frustrations de ne pas pouvoir appliquer votre plan à la lettre ?
+					</aside>
+				</section>
+
+				<section id="iterations-are-born" data-timing="40">
+					<h3>Iteration</h3>
+					<ul>
+						<li class="fragment">Chop work in small pieces</li>
+						<li class="fragment">Conceive</li>
+						<li class="fragment">Document</li>
+						<li class="fragment">Realize</li>
+						<li class="fragment">Test</li>
+					</ul>
+					<p style="margin-top:30px;" class="fragment"><i>Work, event if "incomplete", is functionnal and can be shown to client</i></p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="building-a-car" data-timing="50">
+					<img src="./assets/carBuilding.png" style="border: none; box-shadow: none;background: none; height: -webkit-fill-available; padding-bottom: 90px;" />
+					<aside class="notes">
+						Not real reality
+						At least use internally
+						still a metaphore
+					</aside>
+				</section>
+
+				<section id="brussels-moscow2" data-timing="50">
+					<h3>From Brussels To Moscow ... Agile !</h3>
+					<ul>
+						<li class="fragment">Plan a 1 day trip knowing that you aim to go to Moscow</li>
+						<li class="fragment">You need to plan and anticipate everything</li>
+						<li class="fragment">10 minutes</li>
+					</ul>
+					<aside class="notes">
+						L'idée consiste à se fixer un premier objectif à courts termes (une grande ville par exemple) et se lancer sur la route sans tarder. Une fois ce premier objectif atteint, on marque une courte pause et on adapte son itinéraire en fonction de la situation du moment. Et ainsi de suite jusqu'à atteindre la destination finale. On parle donc d'une approche empirique. Dans le cadre d'un projet de développement logiciel, le client élabore sa vision du produit à réaliser et liste les fonctionnalités ou exigences de ce dernier. Il soumet cette liste à l'équipe de développement, communique directement avec elle (plutôt que par papier) qui estime le coût de chaque élément de la liste. On peut ainsi se faire une idée approximative du budget global.
+					</aside>
+				</section>
+
+
+				<section id="why-iteration" data-timing="40">
+					<h3>Why iterations</h3>
+						<ul>
+						<li class="fragment">Why sprints: timeboxing</li>
+						<li class="fragment">why timeboxing : deadline</li>
+						<li class="fragment">Why deadline : we are better deadlines</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section id="iterations-benefits" data-timing="40">
+					<h3>Benefits of iterations</h3>
+					<ul>
+						<li>Early visibility on work done</li>
+						<li>Positive communication</li>
+						<li>Feedback loop</li>
+						<li>More transparency</li>
+						<li>More collaboration</li>
+						<li>Better TTM</li>
+					</ul>
+					<aside class="notes">
+						QUESTIONS TIME
+					</aside>
+				</section>
+				
+				<!--
+				###########################################
+						PART 3 : HISTORY / ORIGIN
+				###########################################
+				-->
+				<section id="history-cover" data-timing="40">
+					<h3>A bit of history</h3>	
+				</section>
+
+				<section id="history" data-timing="40">
+					<h3>Quick origins</h3>	
+					<ul>
+						<li class="fragment">"Child" of lean</li>
+						<li class="fragment">First iterative development : 1986</li>
+						<li class="fragment">First Scrum usage : 1993</li>
+						<li class="fragment">Agile Manifesto : 2001</li>
+					</ul>
+					<aside class="notes">
+						Sans rentrer dans les détails, la première chose à savoir est que l'approche Agile n'est pas un effet de mode né de la dernière pluie. En effet la première approche de gestion de projet de développement itératif date de 1986. La première mise en œuvre de la méthode Scrum (la méthode Agile la plus utilisée, documentée et éprouvée aujourd'hui) date de 1993.
+
+						La seconde concerne un événement majeur rassemblant, en 2001, dix sept figures éminentes du développement logiciel pour débattre du thème unificateur de leurs méthodes respectives. De cet événement est né le Manifeste Agile rassemblant à la lueur des expériences de chacun les critères pour définir une nouvelle façon de développer des logiciels. Le terme "Agile" pour qualifier ce type de méthode est également né à cette occasion.
+
+						Aujourd'hui ces méthodes ont fait leurs preuves. Tout le monde (dans le monde de l'informatique) ou presque a au moins entendu parler d'une méthode Agile (Scrum, eXtreme Programming, RAD, Chrystal Clear,...). L'outillage associé est maintenant disponible sur le marché y compris dans le secteur Open Source. Les formations, certifications, conférences, livres, blogs se sont multipliés. Nous pouvons également noter la prise de position en faveur de l'approche Agile de la part des organismes faisant "autorité" en matière de gestion de projet informatique :
+					</aside>
+				</section>
+				
+
+				<section id="agile-manifesto" data-timing="40">
+					<a target="_blank" href="http://agilemanifesto.org/">http://agilemanifesto.org/</a>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="4-values-of-agile" data-timing="40">
+					<img src="./assets/agile4Values.jpg" style="border: none; box-shadow: none;background: none; " />
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<!--
+				###########################################
+					PART 4 : SCRUM
+				###########################################
+				-->
+
+				<section id="scrum" data-timing="40">
+					<h3>Scrum</h3>
+				</section>
+
+				<section id="why-scrum" data-timing="40">
+					<h3>Why Scrum ?</h3>
+						<ul>
+						<li>Most used method/framework</li>
+						<li>=> most fieldproven</li>
+						<li>=> most documented (books, blogs, trainings ...)</li>
+					</ul>
+					<aside class="notes">
+						Other methods !!
+						We will talk about some later
+						Remember to be curious and that you never know everything
+					</aside>
+				</section>
+
+				<section id="scrum-roles" data-timing="40">
+					<h3>Roles definition</h3>
+						<ul>
+						<li class="fragment">Dev Team</li>
+						<li class="fragment">Product Owner</li>
+						<li class="fragment">Scrum Master</li>
+					</ul>
+					<aside class="notes">
+						PO : business vision / client interface (or even client) => often mixed with a Project Manager :: WRONG
+						SMaster : safeguard/WatchDog of the scrum methodology. Also catalyser of the spirit
+						Dev Team : The one who create the product
+					</aside>
+				</section>
+
+				<section id="scrum-ceremonies" data-timing="40">
+					<h3>Ceremonies</h3>
+						<ul>
+						<li class="fragment">Sprint planning</li>
+						<li class="fragment">Sprint review</li>
+						<li class="fragment">Sprint restrospective</li>
+						<li class="fragment">Daily meeting</li>
+						<li class="fragment">(Grooming)</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li> Sprint planning: dev tem takes items by priority from "Product Backlog". Taks what team thinks as feasable in agreement with product owner</li>
+							<li> product backlog : ordered list of items (fonctionnal or non fonctionnal items)</li>
+							<li> Sprint review : Dev team presents realizations done during sprint; Gets feedback from PO & client (ideally final user). Also time to anticipate next sprints and review scope of final/next releases</li>
+							<li> Retrospective : generally after review. Improvement time (productivity, quality, efficiency, work environment, relationships ...). Review last sprint. Define SMART objective (Specific Measurable Achievable Realistic Time-bound)</li>
+							<li> Stand Up/ Daily : done standing. 15 min max. 3 questions : what did I do / What will I do / Do I need anything. => daily follow up of sprint</li>
+							<li> Grooming (non standard) : Pre-determine tasks and refine content.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="scrum-schema" data-timing="40">
+					<h3> The process </h3>
+					<img src="./assets/scrumSchema.png" style="border: none; box-shadow: none;background: none; " />
+					<ul>
+						<li>Build the Product Backlog</li>
+						<li>Build the Sprint Backlog</li>
+						<li>Do the Sprint</li>
+						<li>Review the sprint (feedback loop, product side)</li>
+						<li>Retrospective (feedback loop, team side)</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section id="scrum-measure" data-timing="40">
+					<h3>Measure progress</h3>
+					<ul>
+						<li class="fragment">Team motivation</li>
+						<li class="fragment">Client feedback and transparency</li>
+						<li class="fragment">Risks preview</li>
+					</ul>
+					<aside class="notes">
+						Burndown charts, team velocity, sprint statistics ....
+						==> Client transparency and trust & collaboration building
+						Team motivation 
+						Risks anticipation
+					</aside>
+				</section>
+
+				<section id="scrum-contract" data-timing="40">
+					<h3>What about contractualisation?</h3>
+					<img src="./assets/scopePlanningCost.jpg" style="border: none; box-shadow: none;background: none; " />
+					<aside class="notes">
+
+						Complex part, since scope is not fixed.
+						Often forfait contracts, especially for big projects => client avoids all risks.
+
+						New ways (more risky ?) : iteration base contract, can stop anytime, etc ... 
+
+						QUESTIONS TIME
+					</aside>
+				</section>
+
+				<!--
+				###########################################
+					PART 5 : OTHER FRAMEWORKS/METHODS/TOOLS
+				###########################################
+				-->
+
+				<section id="tools-cover" data-timing="40">
+					<h3>Other tools</h3>
+					<img src="./assets/agileMethods.jpg" style="border: none; box-shadow: none;background: none; " />
+					<aside class="notes">
+						Carefull about "magic" solutions.
+						Agile is always based on way of thinking. tools without is like homer's monkey thiking.
+					</aside>
+				</section>
+
+				<section id="tools-monkey" data-timing="40">
+					<img src="./assets/homerMonkey.gif" style="border: none; box-shadow: none;background: none; " />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="kanban" data-timing="40">
+					<h3>Kanban</h3>
+					<img src="./assets/kanban.jpg" style="border: none; box-shadow: none;background: none; " />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="kanban2" data-timing="40">
+					<h3>Kanban</h3>
+					<ul>
+						<li>Just in time method</li>
+						<li>Based on 4 core principles</li>
+						<li>Uses 6 core practices</li>
+					</ul>
+					<aside class="notes">
+						Talk about scrum board ?
+					</aside>
+				</section>
+
+				<section id="xp" data-timing="40">
+					<h3>eXtreme Programming (XP)</h3>
+					<img src="./assets/xp.gif" style="border: none; box-shadow: none;background: none;  height: -webkit-fill-available; padding-bottom: 90px;" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="xp2" data-timing="40">
+					<h3>eXtreme Programming (XP)</h3>
+					<ul>
+						<li>Can be used as "sub framework" part of another framework</li>
+						<li>Not 1 coding / 1 watching</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="safe" data-timing="40">
+					<h3>SAFE</h3>
+				</section>
+
+				<!--
+				###########################################
+					PART 6 : CONCLUSION BEFORE EXERCISE
+				###########################################
+				-->
+				<section id="agile-tldl" data-timing="10">
+					<h3>TL;DL in 4 points</h3>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section id="agile-tldl1" data-timing="240">
+					<img src="./assets/agileNeedsYou.jpg" style="border: none; box-shadow: none; background: none; height: -webkit-fill-available; padding-bottom: 90px;" />
+					<aside class="notes">
+						As developers / Team Members / Managers ... 
+						YOU are building the product, YOU ensure it's quality
+					</aside>
+				</section>
+
+				<section id="agile-tldl2" data-timing="25">
+					<img src="./assets/knowNothing.gif" style="border: none; box-shadow: none;" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="agile-tldl3" data-timing="240">
+					<img src="./assets/thinking.gif" style="border: none; box-shadow: none; background: none; height: -webkit-fill-available; padding-bottom: 90px;" />
+					<aside class="notes">
+						As developers / Team Members / Managers ... 
+						YOU are building the product, YOU ensure it's quality
+					</aside>
+				</section>
+
+				<section id="agile-tldl4" data-timing="25">
+					<i>
+						“It is not the strongest of the species that survives, <br/ >
+						not the most intelligent that survives. <br/ >
+						It is the one that is the most adaptable to change.” <br/ ><br/ >
+						<span style="display: inline-block;width: 100%;text-align: right;">Charles Darwin<span>
+					</i>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section id="questions" data-timing="10">
+					<h4>Questions ?</h4>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="break" data-timing="10">
+					<h4>Break time 10/15 min</h4>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<!--
+				###########################################
+					PART 7 : PIZZAS !
+				###########################################
+				-->
+
+				<section id="pizza" data-timing="10">
+					<h3> <i class="fa fa-cutlery" aria-hidden="true"></i> PIZZA TIME !</h3>
+					<aside class="notes">
+						http://www.agile42.com/en/training/kanban-pizza-game/
+						http://media.agile42.com/content/Kanban_Pizza_Game_1.pdf?_ga=2.41142690.1041552574.1507114020-1867875566.1507114020
+						http://www.coffee-meeting.com/pizza-game-kanban
+						http://oyomy.fr/2016/01/kanban-pizza-game/
+					</aside>
+				</section>
+
+
+				<section id="pizza2" data-timing="10">
+					<h3>Kanban</h3>
+					<ul>
+						<li>Start with what you do (k)now — <i>regardless of how ugly it is</i></li>
+						<li>Respect the current process — <i>roles, responsibilities & titles</i></li>
+						<li>Leadership at all levels</li>
+						<li>Agree to pursue incremental, evolutionary change</li>
+					</ul>
+					<aside class="notes">
+						Learning Objectives
+						What are the goals of the game from a training perspective? We want participants to:
+
+						Experience how a Kanban system emerges from an existing process, as it does in the real world
+						Experience a whole Kanban system, as opposed to focusing only on the Kanban board and related mechanics
+						Understand that boards are context-dependent: for any given process there are many different board designs that are adequate and useful, but the perfect board doesn't necessarily exist
+						Understand the effects of limiting your Work in Progress
+						Experience self-organization and adaptation
+						Have fun!
+						Each team gets paper of different colors, scissors and other materials (the full list of materials is at the bottom of this page). They will cut, shape and tape these together to form pizza slices according to the given recipe.
+					</aside>
+				</section>
+
+				<section id="pizza3" data-timing="10">
+					<b>
+						Kanban is NOT a process!<br/><br/>
+						It’s a change management method: <br/>
+						something you DO to a process.
+					</b>
+				</section>
+
+				<section id="pizza4" data-timing="40">
+					<h3>Start where you are</h3>
+					<ul>
+						<li>Nalys Pizzeria</li>
+						<li>Produce as many scliced as you can</li>
+						<li>Iterations are NOT fixed</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="pizza4bis" data-timing="40">
+					<h3>The ideal pizza</h3>
+					<ul>
+						<li>Nice base with tomato</li>
+						<li>3 ham pieces (Pink post-it)</li>
+						<li>3 pineapple pieces (Yellow Post-it)</li>
+						<li>Toppings needs to be glued !</li>
+						<li>Oven : 30 secs / no changes when On</li>
+						<li>3 slices max in the oven</li>
+					</ul>
+					<aside class="notes">
+						Prepare and explain a slice
+					</aside>
+				</section>
+
+				<section id="pizza4bis2" data-timing="40">
+					<h3>Go !</h3>
+				</section>
+
+				<section id="pizza5" data-timing="40">
+					<h3>Iteration 1 review</h3>
+					<ul>
+						<li> Leftovers :					
+							<ul>
+								<li>Pizza base = <span style="color:red;">-4 points</span></li>
+								<li>topping = <span style="color:red;">-1 point</span></li>
+							</ul>
+						</li>
+						<li>finished slice  = <span style="color:green;">+10 points</span></li>
+					</ul>
+					<aside class="notes">
+						Prepare and explain a slice
+					</aside>
+				</section>
+
+				<section id="pizza6" data-timing="40">
+					<h3>6 core values</h3>
+					<ul>
+						<li>Visualize the workflow</li>
+						<li>Limit work in process (WIP)</li>
+						<li>Make process policies explicit</li>
+						<li>Measure & optimize flow</li>
+						<li>Implement feedback loops </li>
+						<li>Improve collaboratively, improve experimentally</li>
+					</ul>
+					<aside class="notes">
+						Prepare and explain a slice
+					</aside>
+				</section>
+
+				<section id="pizza6" data-timing="40">
+					<h3>Plan Iteration 2</h3>
+					<ul>
+						<li>Visualize the workflow</li>
+						<li>Limit work in process (WIP)</li>
+						<li>Make process policies explicit</li>
+					</ul>
+					<aside class="notes">
+						Use tape to limit stuff => visualize
+						LimitWIP on at least 1 station
+						Use best slice to define a DoD => Make processes explicit
+					</aside>
+				</section>
+
+				<section id="pizza7" data-timing="40">
+					<h3>Go !</h3>
+				</section>
+
+				<section id="pizza8" data-timing="40">
+					<h3>Iteration 2 review</h3>
+					<ul>
+						<li> Leftovers :					
+							<ul>
+								<li>Pizza base = <span style="color:red;">-4 points</span></li>
+								<li>topping = <span style="color:red;">-1 point</span></li>
+							</ul>
+						</li>
+						<li>finished slice  = <span style="color:green;">+10 points</span></li>
+					</ul>
+					<aside class="notes">
+						Prepare and explain a slice
+					</aside>
+				</section>
+
+				<section id="pizza9" data-timing="40">
+					<h3>New ! "Pizza Rucola" !</h3>
+					<ul>
+						<li class="fragment">Slim green Post-it : Rocket Salad</li>
+						<li class="fragment">7 leaves per slice</li>
+						<li class="fragment"><b>WARNING : </b>Rucola burns in the oven ! It must be placed after baking.</li>
+					</ul>
+					<aside class="notes">
+						Use tape to limit stuff => visualize
+						LimitWIP on at least 1 station
+						Use best slice to define a DoD => Make processes explicit
+					</aside>
+				</section>
+
+				<section id="pizza10" data-timing="40">
+					<h3>New ! We take orders !</h3>
+					<ul>
+						<li class="fragment">Points are given only for fully delivered orders </li>
+						<li class="fragment">Orders picked from central location & delivered to another central location</li>
+						<li class="fragment">Mark the "mm:ss" timestamps! </li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="pizza11" data-timing="40">
+					<h3>Go !</h3>
+				</section>
+
+				<section id="pizza12" data-timing="40">
+					<h3>Iteration 3 review</h3>
+					<ul>
+						<li> Leftovers :					
+							<ul>
+								<li>Pizza base = <span style="color:red;">-4 points</span></li>
+								<li>topping = <span style="color:red;">-1 point</span></li>
+							</ul>
+						</li>
+						<li>finished slice  = <span style="color:green;">+10 points</span></li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section id="pizza13" data-timing="40">
+					<h3>Draw you own Kanban !</h3>
+					<ul>
+						<li>Look back to the game</li>
+						<li>Draw the flow including WIP limits</li>
+						<li>Use your materials to make it look nice</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section id="pizza14" data-timing="40">
+					<img src="./assets/kanbanExample.png" style="border: none; box-shadow: none; background: none; height: -webkit-fill-available; padding-bottom: 90px;" />
+					<aside class="notes">
+					</aside>
+				</section>
+				<!--
+				###########################################
+					PART 8 (optional) : BALLOONS !
+				###########################################
+				-->
+
+				<section id="sources" data-timing="5">
+					<h4 style="padding-bottom: 40px;">Sources</h4>
+					<ul style="list-style-type: none; font-size: 40px;">
+						<li><a href="https://theagileadmin.com/what-is-devops/">The agile admin</a></li>
+						<li><a href="http://www.agiliste.fr/introduction-methodes-agiles/">Agiliste</a></li>
+						<li><a href="http://blog.d2-si.fr/2014/04/18/introduction-agile/">D2-SI</a></li>
+						<li><a href="http://www.agile42.com">Agile42</a></li>
+					</ul>
+				</section>
+
+				<section id="sources" data-timing="5">
+					<h4>Lunch Break!</h4>
+				</section>
+
+				<!--
+				###########################################
+					PART 8 (optional) : BALLOONS !
+				###########################################
+				-->
+
+				<section id="devops" data-timing="240">
+					<h3>DEVOPS</h3>
+				</section>
+
+				<section data-timing="5" id="devops-unique">
+					<i>DevOps is unique to everyone who practices it</i>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="quick-history">
+					<h3>Quick history</h3>
+					<ul>
+						<li class="fragment">From <i>agility</i> to <i>"Agile Infrastructure"</i></li>
+						<li class="fragment" style="height:100%; line-height: 100%; vertical-align: middle;">
+
+							<span style="width: 60px; height: 60px;">
+								<svg width="60" height="60" style="border-radius: 50%">
+									<rect x="0" y="0" width="21" height="60" style="fill:#000000);" />
+									<rect x="21" y="0" width="18" height="60" style="fill:#FAE042;" />
+									<rect x="39" y="0" width="21" height="60" style="fill:#ED2939" />
+								</svg>
+							<span>
+							DevOps" - <i>Patrick Debois, 2009 (<a href="www.jedi.be"> jedi.be </a>)</i>
+						</li>
+						<li class="fragment">Old concepts <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> New Trend</li>
+					</ul>
+
+					<aside class="notes">
+						- "Agile Infrastructure" : Agile conference 2008 <br/>
+						  => agility reqires frequent delivery and quality checks => agile infrastructure <br/>
+
+						<br/>
+
+						- DevOps : After work/speaks with Andrew Shafer<br/>
+						(cf https://blog.newrelic.com/2014/05/16/devops-name/) <br/>
+
+						<br/>
+
+						- old concepts, caalyzed and aggregated into devops -> new
+
+					</aside>
+				</section>
+
+				<section id="agile-infrastructure2">
+					<h3>The Agile infrastructure</h3>
+
+
+					<div id="ai-business" class="fragment" data-fragment-index="2" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative">BUSINESS </div>
+
+					<div id="ai-agile" class="fragment" data-fragment-index="4" style="z-index: 1; background-color: orange; margin: -130px auto; border-radius: 125px; width: 500px; height: 220px; vertical-align: middle; line-height: 220px;"> AGILE </div>
+
+					<div id="ai-dev" class="fragment" data-fragment-index="1" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative"> DEVELOPMENT </div>
+
+					<div id="ai-devops" class="fragment" data-fragment-index="5" style="z-index: 1; background-color: orange; margin: -130px auto; border-radius: 125px; width: 500px; height: 220px; vertical-align: middle; line-height: 220px;"> DEVOPS </div>
+
+					<div id="ai-ops" class="fragment" data-fragment-index="3" style="z-index: 10; background-color: darkslategray; margin: 68px 0; padding: 20px; position: relative"> OPERATIONS </div>
+
+					<img class="fragment" id="business" data-fragment-index="2" src="./assets/business.png" style="background: none;z-index: 11;left:0; top: 80px;height: 250px;position:absolute; border: none; box-shadow: none" />
+					<img class="fragment" id="developer" data-fragment-index="1" src="./assets/developer.png" style="background: none;z-index: 11;right:0; top: 280px;height: 250px;position:absolute; border: none; box-shadow: none" />
+					<img class="fragment" id="operational" data-fragment-index="3" src="./assets/operational.png" style="background: none;z-index: 11;left:0; top: 480px;height: 250px;position:absolute; border: none; box-shadow: none" />
+
+					<aside class="notes">
+						- Agility : here to reconcile management (business) and developers <br/>
+
+						- Devops : originally here to reconcile devs and ops in order to fulfill agility needs to have quality engineering (also on infra) <br/>
+						- <b>BOTH EXISTS IN ORDER TO IMPROVE THE BUSINESS LINE</b>
+						- Not necessary to have both <br/>
+					</aside>
+				</section>
+
+				<section id="dev-and-ops" data-timing="50">
+					<h3 style="margin-bottom: 0;">A story about Devs and Ops</h3>
+
+					<div style="position: relative; width: 1200px; height: 620px;">
+						<img id="developer" src="./assets/developer.png" style="position: absolute; left: 200px; bottom: 55px; background: none; height: 300px; border: none; box-shadow: none" />
+						<p style="position:absolute; bottom: 0; left: 165px; width: 250px; text-align: center; font-weight: bold; font-size: 0.7em">DEVELOPER</p>
+						
+						<img id="wall1" src="./assets/wall.jpg" style="position: absolute; border: none; box-shadow: none; width: 155px; margin-right: auto; margin-left: auto; bottom: 0; left: 0; right: 0;" />
+						<p style="position:absolute; top: 120px; right: 0; left: 0; width: 100%; text-align: center;margin-right: auto; margin-left: auto; font-size: 0.7em">WALL OF CONFUSION</p>
+						
+						<img id="operational" src="./assets/operational.png" style="position: absolute; right: 200px; bottom: 55px; background: none; height: 300px; border: none; box-shadow: none" />
+						<p style="position:absolute; bottom: 0; right: 160px; width: 250px; text-align: center;font-weight: bold; font-size: 0.7em">OPERATIONAL</p>
+
+
+						<svg class="fragment" data-fragment-index="1" viewbox="0 0 525 425" height="250px" width="280px" version="1.1" style="position: absolute; left: 0; transform: scale(-1, 1); top: 36px;">
+							<path style="stroke:black; stroke-linejoin:round; stroke-width:3px; stroke:#ddd; fill:none"
+								d="M 72.140014,391.37082 L 113.90529,296.44975 C 87.508191,275.83832 40.499658,243.29395 41.222865,182.54446 C 40.834139,90.934537 165.68205,33.400040 263.06697,34.467593 C 392.52123,34.286792 490.51593,101.90676 490.33513,182.00206 C 490.15433,290.48329 338.64222,360.99608 183.87568,323.57006 z " />
+						</svg>
+						<svg class="fragment" data-fragment-index="1" viewbox="0 0 525 425" height="250px" width="280px" version="1.1" style="position: absolute; right: 0; top: 36px;">
+							<path style="stroke:black; stroke-linejoin:round; stroke-width:3px; stroke:#ddd; fill:none"
+								d="M 72.140014,391.37082 L 113.90529,296.44975 C 87.508191,275.83832 40.499658,243.29395 41.222865,182.54446 C 40.834139,90.934537 165.68205,33.400040 263.06697,34.467593 C 392.52123,34.286792 490.51593,101.90676 490.33513,182.00206 C 490.15433,290.48329 338.64222,360.99608 183.87568,323.57006 z " />
+						</svg>
+
+
+						<p class="fragment current-visible" data-fragment-index="1" style="position:absolute; top: 75px; left: 40px; width: 200px; text-align: center;font-weight: bold; font-size: 0.7em">I want change !</p>
+						<p class="fragment current-visible" data-fragment-index="1" style="position:absolute; top: 75px; right: 38px; width: 200px; text-align: center;font-weight: bold; font-size: 0.7em">I want stability !</p>
+
+						<p class="fragment current-visible" data-fragment-index="2" style="position:absolute; top: 105px; left: 40px; width: 200px; text-align: center;font-weight: bold; font-size: 0.7em">CATCH !</p>
+						<p class="fragment current-visible" data-fragment-index="2" style="position:absolute; top: 105px; right: 38px; width: 200px; text-align: center;font-weight: bold; font-size: 0.7em">WHAT ?</p>
+
+						<svg class="fragment current-visible" data-fragment-index="2" height="400" width="1200" version="1.1" style="position: absolute; right: 0; top: 0;">
+							<path stroke-dasharray="5,5" style="stroke:black; stroke-linejoin:round; stroke-width:3px; stroke:#ddd; fill:none"
+								d="M 320 200 Q 600 -100 880 200" />
+						</svg>
+
+						<svg class="fragment current-visible" data-fragment-index="2" height="80px" width="80px" viewBox="0 0 512 512" style="position: absolute; top: 60px; right: 400px;" fill="#ddd" ><path d="M505.122,245.073c-0.55-15.348-2.304-30.38-5.473-44.904H397.809v-17.961h35.923v-17.961h-71.846v-17.962h53.885v-17.961  h-17.962v-17.961h-35.923V92.399h17.962V74.438h-35.924V56.477h17.962V38.515V27.114C329.189,11.561,292.74,2.592,254.116,2.592  C118.264,2.592,7.87,110.385,3.104,245.073H505.122z M164.309,56.477c39.671,0,71.846,32.175,71.846,71.846  c0,39.683-32.175,71.846-71.846,71.846c-39.689,0-71.847-32.164-71.847-71.846C92.462,88.652,124.62,56.477,164.309,56.477"/><path d="M308.001,487.554h-17.962v-17.961h53.885v-17.962h17.962v-17.962h53.885v-17.961h17.961v-17.962h-35.923v-17.961h-53.885  v-17.962h35.924v-17.962h71.846V325.9h-35.923v-17.962h83.879c3.169-14.523,4.923-29.55,5.473-44.904H3.104  c4.765,134.7,115.16,242.481,251.012,242.481c18.522,0,36.52-2.14,53.885-5.929V487.554z"/></svg>
+
+					</div>
+
+					<aside class="notes">
+						- different concerns <br/>
+						- different cultures <br/>
+						- dev = product ( improvements / features )<br/>
+						- ops = service ( backups / supervision ) <br/>
+						- same global objective : <br/>
+						-- system working from outside
+						-- client satisfaction
+
+						- those are the "original" facts
+						- DevOps is not limiting to that, wants to be open
+					</aside>
+				</section>
+
+
+				<section id="problem-location" data-timing="40">
+					<i>A problem occuring between devs and ops might find it's solution elsewhere</i>
+					<aside class="notes">
+						-Think about the wall <br/>
+						=> a business throwing specs and sold stuff to devs <br/>
+						=> a QA throwing a "bug" back to devs <br/>
+						etc ...
+					</aside>
+				</section>
+
+				<section id="not-only" data-timing="40">
+					<h3>But not only !</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Solve business problems</li>
+						<li class="fragment" data-fragment-index="2">Break silos</li>
+						<li class="fragment" data-fragment-index="2">Involve everyone</li>
+						<li class="fragment" data-fragment-index="3">Deliver faster, collaborate faster</li>
+					</ul>
+					<aside class="notes">
+						<li>DevOps is not about process/tools/etc, it's about business problems</li>
+						<li>Involve marketing, business, security, QA ...</li>
+						<li>It comes from project, but can be extended to the whole organisation</li>
+					</aside>
+				</section>
+
+				<section id="be-careful" data-timing="10" data-transition="fade-out slide-in">
+
+					<img id="careful" src="./assets/careful.jpg" style="border: none; box-shadow: none; height: 95%" />
+
+					<aside class="notes">
+						<li>there is a phantom menace</li>
+						<li>of preconceived ideas</li>
+					</aside>
+
+				</section>
+
+				<section id="what-it-is-not" data-timing="60" data-transition="fade-in slide-out">
+
+					<h3>What it is not</h3>
+					<ul>
+						<li class="fragment"> Removing Ops</li>
+						<li class="fragment"> Just Tools</li>
+						<li class="fragment"> Just Culture</li>
+						<li class="fragment"> Just Devs and Ops</li>
+						<li class="fragment"> A full job title</li>
+					</ul>
+
+					<aside class="notes">
+						- this slide = Avoid confusion <br/>
+						- break preconceived idea <br/>
+						- NoOps : automation affects devs AND ops => work together and better
+					</aside>
+				</section>
+
+				<section id="so-why" data-timing="60">
+					<h3>Why ?</h3>
+						<ul>
+							<li class="fragment" >Teamwork</li>
+							<li class="fragment" >More agility</li>
+							<li class="fragment" >Increased quality</li>
+							<li class="fragment" >Reduced frustration</li>
+							<li class="fragment" >Reduced Time To Market</li>
+						</ul>
+					<aside class="notes">
+						-> Emphathize this ! <br />
+						-> teamwork => communication <br />
+						-> TTM : One of the main "goal" of devops <br/>
+					</aside>
+				</section>
+
+				<section id="how" data-timing="60">
+					<h3>How ?</h3>
+
+					<ul>
+						<li class="fragment">Change culture</li>
+						<li class="fragment">Unify processes</li>
+						<li class="fragment">Unify tooling</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							- Break old habits <br/>
+							- Use incentives to change culture <br/>
+							- Measure and show progress to move towards employee hapinness <br/>
+							- remove notion of silo => not only<br/>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="tips" data-timing="60" data-transition="fade-out slide-in">
+					<h3>Tips</h3>
+					<ul>
+						<li class="fragment">Don't waterfall DevOps !</i></li>
+						<li class="fragment">Go iterative</i></li>
+						<li class="fragment">Measure team success</li>
+						<li class="fragment">People and culture first, tools second</li>
+					</ul>
+					<aside class="notes">
+						GIVE (AND BUILD ) EXAMPLES
+
+						- DevOps is an outgrowth of agility <br/>
+						- Measure is good for team & business ! <br/>
+						- tools with no culture = WASTE <br/>
+					</aside>
+				</section>
+
+				<section id="sum-up" data-timing="30" data-transition="fade-in slide-out">
+
+					<img id="speed" src="./assets/speed.jpg" style="border: none; box-shadow: none; height: 95%" />
+
+					<aside class="notes">
+						<li>seen theory on how to grow </li>
+						<li>of preconceived ideas</li>
+					</aside>
+
+				</section>
+
+				<!-- DO HERE TRANSITION / SUMMARY -->
+
+				<!--
+				###########################################
+						PART 2 : TOOLS/CONCEPTS
+				###########################################
+				-->
+
+				<section id="tools" data-timing="40">
+					<h3>Tools</h3>
+					<img id="ultimate-weapon" src="./assets/ultimate-weapon.jpg" style="border: none; box-shadow: none; height: 85%" />
+					<aside class="notes">
+						- First some tooling & concepts <br/>
+						- Some examples of tools <br/>
+						- Quentin will detail concrete usages <br/>
+						- Mainly focused on dev (everything before release) and ops (everything from release) <br/>
+						- You may not need everything <br/>
+						- <b>Catalyzer of culture => no culture = tools are waste ! </b> <br/>
+					</aside>
+				</section>
+
+				<section id="tools-concepts" data-timing="30">
+					<h3>A lot of magic keywords</h3>
+
+					<div id="wordcloud" style="width: 100%; height: 500px; position: relative;"></div>
+					<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+					<script type="text/javascript" src="js/jqcloud-1.0.4.js"></script>
+					<script>
+
+					var cloudInit = false;
+						function initCloud() {
+							var words = [
+								"Automation",
+								"Virtualization",
+								"Jenkins",
+								"Maven",
+								"Git",
+								"Docker",
+								"Cloud",
+								"Continuous Integration",
+								"Continuous Deployment",
+								"ElasticSearch",
+								"Monitoring",
+								"PaaS",
+								"IaaS",
+								"Vagrant",
+								"Ansible",
+								"Puppet",
+								"Chef",
+								"Gitlab",
+								"Process",
+								"Integration",
+								"Time To Market",
+								"AWS",
+								"Software",
+								"Bash",
+								"Agile",
+								"Infrastructure",
+								"Scripting",
+								"Monolith",
+								"Microservices",
+								"Toolchain"
+							];
+							var word_list = [];
+
+							for (var i=0; i<words.length; i++) {
+								var new_word = {};
+								new_word.text = words[i];
+								new_word.weight = Math.floor((Math.random() * 10) + 1);
+								word_list.push(new_word);
+							}
+
+						  $("#wordcloud").jQCloud(word_list);
+						}
+					</script>
+
+					<aside class="notes">
+						- A lot of words covering part of Devops <br/>
+						- Identify why => how => what <br/>
+						- It all gets towards the implementation (toolchain and processes) <br/>
+						- insist on deployment, only part of it <br/>
+						- For example Continuous Delivery/deployment => use a beer truck vs use a beer pipeline <br/>
+					</aside>
+				</section>
+
+				<section id="toolchain" data-timing="100">
+					<h3>The toolchain</h3>
+
+					<div style="position:relative;font-size:0.6em;text-align:left;width:1200px; height:220px; padding-top:10px">
+						<div class="fragment" data-fragment-index="1" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; top:0">
+								<!-- create -->
+								<li>Code review</li>
+								<li>version control</li>
+								<li>merge ...</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="0" y1="140" x2="225" y2="140" style="stroke:#159dff;stroke-width:2"></line>
+								<line x1="110" y1="140" x2="110" y2="214" style="stroke:#159dff;stroke-width:2"></line>
+								<circle cx="110" cy="214" r="6" stroke="transparent" fill="#159dff" />
+							</svg>
+						</div>
+						<div class="fragment" data-fragment-index="4" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; top:0;padding-left:30px">
+								<!-- release -->
+								<li>Manage change</li>
+								<li>Validate</li>
+								<li>Automate</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="30" y1="140" x2="290" y2="140" style="stroke:#9249c9;stroke-width:2"></line>
+								<line x1="290" y1="140" x2="290" y2="214" style="stroke:#9249c9;stroke-width:2"></line>
+								<circle cx="290" cy="214" r="6" stroke="transparent" fill="#9249c9"></circle>
+							</svg>
+						</div>
+						<div class="fragment" data-fragment-index="5" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; top:0;">
+								<!-- configure -->
+								<li>Manage infrastructure</li>
+								<li>Infrastructure As Code</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="0" y1="100" x2="330" y2="100" style="stroke:#ff2626;stroke-width:2"></line>
+								<line x1="90" y1="100" x2="90" y2="214" style="stroke:#ff2626;stroke-width:2"></line>
+								<circle cx="90" cy="214" r="6" stroke="transparent" fill="#ff2626"></circle>
+							</svg>
+						</div>
+					</div>
+
+					<div style="width:1200px; height:100px; padding-top:10px">
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#159dff" stroke-width="5"></polygon>
+							<text x="44" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >CREATE</text>
+						</svg>
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#d84c2d" stroke-width="5"></polygon>
+							<text x="49" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >VERIFY</text>
+						</svg>
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#90be4f" stroke-width="5"></polygon>
+							<text x="34" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >PACKAGE</text>
+						</svg>
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#9249c9" stroke-width="5"></polygon>
+							<text x="36" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >RELEASE</text>
+						</svg>
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#ff2626" stroke-width="5"></polygon>
+							<text x="20" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >CONFIGURE</text>
+						</svg>
+						<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#ffc715" stroke-width="5"></polygon>
+							<text x="31" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >MONITOR</text>
+						</svg>
+					</div>
+
+					<div style="position:relative;font-size:0.6em;text-align:left;width:1200px; height:220px; padding-top:0px">
+						<div class="fragment" data-fragment-index="2" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; bottom:0">
+								<!-- verify -->
+								<li>Functionnal</li>
+								<li>Performance</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="0" y1="130" x2="300" y2="130" style="stroke:#d84c2d;stroke-width:2"></line>
+								<line x1="300" y1="130" x2="300" y2="0" style="stroke:#d84c2d;stroke-width:2"></line>
+								<circle cx="300" cy="6" r="6" stroke="transparent" fill="#d84c2d"></circle>
+							</svg>
+						</div>
+						<div class="fragment" data-fragment-index="3" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; bottom:0">
+								<!-- package -->
+								<li>Articfacts storage</li>
+								<li>Staging</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="0" y1="130" x2="265" y2="130" style="stroke:#90be4f;stroke-width:2"></line>
+								<line x1="100" y1="130" x2="100" y2="0" style="stroke:#90be4f;stroke-width:2"></line>
+								<circle cx="100" cy="6" r="6" stroke="transparent" fill="#90be4f"></circle>
+							</svg>
+						</div>
+						<div class="fragment" data-fragment-index="6" style="float:left;width:398px; height:220px;position:relative">
+							<ul style="position:absolute; bottom:0">
+								<!-- monitor -->
+								<li>Performance & availability</li>
+								<li>Functionnal</li>
+								<li>End user</li>
+							</ul>
+							<svg width="398" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0;left:0">
+								<line x1="0" y1="90" x2="380" y2="90" style="stroke:#ffc715;stroke-width:2"></line>
+								<line x1="290" y1="90" x2="290" y2="0" style="stroke:#ffc715;stroke-width:2"></line>
+								<circle cx="290" cy="6" r="6" stroke="transparent" fill="#ffc715"></circle>
+							</svg>
+						</div>
+					</div>
+
+					<aside class="notes">
+						DO YOU KNOW WHAT IT IS ?
+						
+						=> chaining diffent tools together to make them more powerful <br/>
+						"generic flow" => you take what you need / add some and <b>adapt</b> it <br/><br/>
+
+					</aside>
+				</section>
+
+				<section id="flow-example">
+					<h3 style="margin-bottom: 10px">A flow example</h3>
+
+					<div style="position:relative;">
+
+						<div style="position:relative;font-size:0.6em;text-align:left;width:1200px; height:220px; padding-top:10px; ">
+							<div class="fragment" data-fragment-index="1" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="git" src="./assets/git.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="mercurial" src="./assets/mercurial.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="2" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="junit" src="./assets/junit.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="selenium" src="./assets/selenium.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="3" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="artifactory" src="./assets/artifactory.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="nexus" src="./assets/nexus.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="4" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="ansible" src="./assets/ansible.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="puppet" src="./assets/puppet.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="5" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="vagrant" src="./assets/vagrant.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="docker" src="./assets/docker.png" style="margin:2px auto; display: block; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="6" style="float:left; width:196px; height:220px; position:relative; display:flex; flex-direction:column-reverse;">
+								<img id="elastic" src="./assets/elastic.png" style="margin:2px auto; display: block; background: none; width: 80px; border:none; box-shadow:none" />
+							</div>
+						</div>
+
+						<div style="width:1200px; height:100px; padding-top:10px; ">
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#159dff" stroke-width="5"></polygon>
+								<text x="44" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >CREATE</text>
+							</svg>
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#d84c2d" stroke-width="5"></polygon>
+								<text x="49" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >VERIFY</text>
+							</svg>
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#90be4f" stroke-width="5"></polygon>
+								<text x="34" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >PACKAGE</text>
+							</svg>
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#9249c9" stroke-width="5"></polygon>
+								<text x="36" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >RELEASE</text>
+							</svg>
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#ff2626" stroke-width="5"></polygon>
+								<text x="20" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >CONFIGURE</text>
+							</svg>
+							<svg width="185" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<polygon points="0 0 165 0 185 45 165 90 0 90 15 45" stroke="transparent" fill="#ffc715" stroke-width="5"></polygon>
+								<text x="31" y="55" font-family="Monospace" font-size="30" fill="#eeeeee" font-weight="bold" >MONITOR</text>
+							</svg>
+						</div>
+
+						<div style="position:relative;font-size:0.6em;text-align:left;width:1200px; height:110px; padding-top:10px; ">
+							<div class="fragment" data-fragment-index="7" style="float:left; width:398; height:110px; position:relative; text-align: center;">
+								<img id="gitlab" src="./assets/gitlab.png" style="margin:2px auto; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="bitbucket" src="./assets/bitbucket.png" style="margin:2px auto; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="github" src="./assets/github.png" style="margin:2px auto; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+							<div class="fragment" data-fragment-index="7" style="float:left;width:196px; height:110px;position:relative">
+							</div>
+							<div class="fragment" data-fragment-index="8" style="float:left; width:597px; height:110px; position:relative; text-align: center;">
+								<img id="rancher" src="./assets/rancher.png" style="margin:2px auto; background: none; height: 80px; border:none; box-shadow:none" />
+								<img id="kubernetes" src="./assets/kubernetes.png" style="margin:2px auto; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+								<img id="docker-swarm" src="./assets/docker-swarm.png" style="margin:2px auto; background: none; width: 80px; height: 80px; border:none; box-shadow:none" />
+							</div>
+						</div>
+						<div class="fragment" data-fragment-index="9" style="position:relative;width:1200px; height:110px; background-color: #888; text-align: center; ">
+							<img id="jenkins" src="./assets/jenkins.png" style="margin:2px auto; background: none; height: 110px; border:none; box-shadow:none" />
+						</div>
+
+					</div>
+
+					<aside class="notes">
+						example to show chaining of tools <br/>
+						again, not exhaustive, may not apply (entirely) to you
+					</aside>
+				</section>
+
+				<!--
+				###########################################
+								CONCLUSION
+				###########################################
+				-->
+				<section id="tldl" data-timing="10">
+					<h3>TL;DL in 5 points</h3>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="silos" data-timing="25">
+					<h4>1. Break Silos</h4>
+					<img id="thewall2" src="./assets/collaboration.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="iterative" data-timing="25">
+					<h4>2. Go iterative</h4>
+					<img id="thewall2" src="./assets/iterative.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="measure" data-timing="25">
+					<h4>3. Measure progress</h4>
+					<img id="thewall2" src="./assets/measure.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="fail" data-timing="25">
+					<h4>4. It is ok to fail</h4>
+					<img id="thewall2" src="./assets/fail.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="unique" data-timing="25">
+					<h4>5. DevOps is unique to your project</h4>
+					<img id="thewall2" src="./assets/unique.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<!--
+				###########################################
+								CLOSING
+				###########################################
+				-->
+
+				<section id="ready-to-rock" data-timing="10">
+					<h4>Questions time</h4>
+					<img id="rock" src="./assets/rock.jpg" style="border: none; box-shadow: none; height: 84%" />
+					<p style="text-align: right;font-size: 0.4em;position: absolute;bottom:0; width:100%;"><i class="fa fa-rocket" aria-hidden="true"></i> Powered by <a href="https://github.com/hakimel/reveal.js/">Reveal.js</a></p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="sources-devops" data-timing="5">
+					<h4 style="padding-bottom: 40px;">Sources</h4>
+					<ul style="list-style-type: none; font-size: 40px;">
+						<li><i class="fa fa-rss" aria-hidden="true"></i> <a href="https://theagileadmin.com/what-is-devops/">The agile admin</a></li>
+						<li><i class="fa fa-rss" aria-hidden="true"></i> <a href="http://www.lemagit.fr/definition/DevOps">Le Mag IT</a></li>
+						<li><i class="fa fa-rss" aria-hidden="true"></i> <a href="http://blog.octo.com/devops/">Octo Blog</a></li>
+						<li><i class="fa fa-rss" aria-hidden="true"></i> <a href="http://www.jedi.be/">Jedi.be</a></li>
+
+						<li><i class="fa fa-flickr" aria-hidden="true"></i> <a href="https://www.flickr.com/">flickr</a></li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+	<!--
+		###########################################
+						REVEAL INIT
+		###########################################
+		-->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				// Display controls in the bottom right corners
+				controls: false,
+				// Display a presentation progress bar
+				progress: true,
+				// Set default timing of 2 minutes per slide
+				defaultTiming: 70,
+				// Display the page number of the current slide
+				slideNumber: true,
+				// Push each slide change to the browser history
+				history: true,
+				// Enable keyboard shortcuts for navigation
+				keyboard: true,
+				// Enable the slide overview mode
+				overview: false,
+				// Vertical centering of slides
+				center: true,
+				// Enables touch navigation on devices with touch input
+				touch: false,
+				// Loop the presentation
+				loop: false,
+				// Change the presentation direction to be RTL
+				rtl: false,
+				// Randomizes the order of slides each time the presentation loads
+				shuffle: false,
+				// Turns fragments on and off globally
+				fragments: true,
+				// Flags if the presentation is running in an embedded mode,
+				// i.e. contained within a limited portion of the screen
+				embedded: false,
+				// Flags if we should show a help overlay when the questionmark
+				// key is pressed
+				help: false,
+				// Flags if speaker notes should be visible to all viewers
+				showNotes: false,
+				// Global override for autolaying embedded media (video/audio/iframe)
+				// - null: Media will only autoplay if data-autoplay is present
+				// - true: All media will autoplay, regardless of individual setting
+				// - false: No media will autoplay, regardless of individual setting
+				autoPlayMedia: null,
+				// Number of milliseconds between automatically proceeding to the
+				// next slide, disabled when set to 0, this value can be overwritten
+				// by using a data-autoslide attribute on your slides
+				autoSlide: 0,
+				// Stop auto-sliding after user input
+				autoSlideStoppable: true,
+				// Use this method for navigation when auto-sliding
+				autoSlideMethod: Reveal.navigateNext,
+				// Enable slide navigation via mouse wheel
+				mouseWheel: false,
+				// Hides the address bar on mobile devices
+				hideAddressBar: true,
+				// Opens links in an iframe preview overlay
+				previewLinks: false,
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+				// Number of slides away from the current that are visible
+				viewDistance: 3,
+				// Parallax background image
+				parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+				// Parallax background size
+				parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+				// Number of pixels to move the parallax background per slide
+				// - Calculated automatically unless specified
+				// - Set to 0 to disable movement along an axis
+				parallaxBackgroundHorizontal: null,
+				parallaxBackgroundVertical: null,
+				// The display mode that will be used to show slides
+				display: 'block',
+				dependencies: [
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+
+				if(event.currentSlide.id === 'agility') {
+       		var video = document.getElementById("agilityVideo");
+          video.play();
+				}
+
+				if (event.currentSlide.id === "cover") {
+					$("#cover-footer").show();
+				} else {
+					$("#cover-footer").hide();
+				}
+			} );
+		</script>
+	</body>
+</html>
