@@ -4,7 +4,6 @@
 		<link rel="stylesheet" href="css/theme/moon.css">
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/jqcloud.css" />
-		<link rel="stylesheet" type="text/css" href="css/bubbles.css" />
 	</head>
 	<body>
 
@@ -14,6 +13,7 @@
 	06/10: 1h
 	week end 07-08/10 : 4h
 	09/10 : 4h
+	14/10 : 4h
 -->
 
 
@@ -573,7 +573,7 @@
 
 				<section id="agile-tldl4" >
 					<h4>4. It is ok to fail</h4>
-					<img id="thewall2" src="./assets/fail.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/fail.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
@@ -871,6 +871,13 @@
 					<h3>DEVOPS</h3>
 				</section>
 
+
+				<section id="kapla" >
+					<img src="./assets/jenga.jpg" style="border: none; box-shadow: none" />
+					<aside class="notes">
+					</aside>
+				</section>
+
 				<section d="devops-unique">
 					<i>DevOps is unique to everyone who practices it</i>
 					<aside class="notes">
@@ -961,7 +968,7 @@
 				</section>
 
 				<section id="be-careful" data-transition="fade-out slide-in">
-					<img id="careful" src="./assets/careful.jpg" style="border: none; box-shadow: none; height: 95%" />
+					<img id="careful" src="./assets/fakeNews.gif" style="border: none; box-shadow: none;" />
 					<aside class="notes">
 					</aside>
 				</section>
@@ -988,6 +995,12 @@
 							<li class="fragment" >Reduced frustration</li>
 							<li class="fragment" >Reduced Time To Market</li>
 						</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section id="explain-yourself" >
+					<img src="./assets/explainYourself.gif" style="border: none; box-shadow: none;background: none; " />
 					<aside class="notes">
 					</aside>
 				</section>
@@ -1264,35 +1277,35 @@
 
 				<section id="silos" >
 					<h4>1. Break Silos</h4>
-					<img id="thewall2" src="./assets/collaboration.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/collaboration.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
 
 				<section id="iterative" >
 					<h4>2. Go iterative</h4>
-					<img id="thewall2" src="./assets/iterative.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/iterative.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
 
 				<section id="measure" >
 					<h4>3. Measure progress</h4>
-					<img id="thewall2" src="./assets/measure.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/measure.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
 
 				<section id="fail" >
 					<h4>4. It is ok to fail</h4>
-					<img id="thewall2" src="./assets/fail.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/fail.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
 
 				<section id="unique" >
 					<h4>5. DevOps is unique to your project</h4>
-					<img id="thewall2" src="./assets/unique.jpg" style="border: none; box-shadow: none" />
+					<img src="./assets/unique.jpg" style="border: none; box-shadow: none" />
 					<aside class="notes">
 					</aside>
 				</section>
@@ -1406,6 +1419,11 @@
 
 			Reveal.addEventListener( 'slidechanged', function( event ) {
 
+				if (!cloudInit && event.currentSlide.id === "tools-concepts") {
+					initCloud();
+					cloudInit = true;
+				}
+				
 				if(event.currentSlide.id === 'agility') {
        		var video = document.getElementById("agilityVideo");
           video.play();
