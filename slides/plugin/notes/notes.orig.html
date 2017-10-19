@@ -197,44 +197,6 @@
 				clear: both;
 			}
 
-			/* Speaker layout: no-notes */
-			body[data-speaker-layout="no-notes"] #current-slide {
-				width: 70%;
-				height: 100%;
-				padding: 6px;
-				top: 0;
-				left: 0;
-			}
-
-			body[data-speaker-layout="no-notes"] #upcoming-slide {
-				opacity: 0.7;
-				width: 30%;
-				height: 40%;
-				padding: 6px;
-				top: 0;
-				left: 70%;
-			}
-
-			body[data-speaker-layout="no-notes"] #speaker-controls {
-				display: none;
-			}
-
-			body #time {
-				display: none;
-			}
-			body[data-speaker-layout="no-notes"] #time {
-				display: block;
-				top: 65%;
-				left: 70%;
-				width: 30%;
-				height: 35%;
-				font-size: 5em;
-				position: absolute;
-		    right: 0;
-		    overflow: auto;
-		    text-align: center;
-			}
-
 			/* Speaker layout: Wide */
 			body[data-speaker-layout="wide"] #current-slide,
 			body[data-speaker-layout="wide"] #upcoming-slide {
@@ -326,24 +288,8 @@
 
 	<body>
 
-		<script>
-
-        function fullDateTime() {
-            var d = new Date();          
-            var n = d.toLocaleString([], { hour: '2-digit', minute: '2-digit' });
-            if (document.getElementById("time-value")) {
-            	document.getElementById("time-value").innerHTML = n;
-            }
-            setTimeout(fullDateTime, 10000)
-        }
-        fullDateTime();
-    </script>
-
 		<div id="current-slide"></div>
 		<div id="upcoming-slide"><span class="overlay-element label">Upcoming</span></div>
-		<div id="time">
-			<span id="time-value"></span>
-		</div>
 		<div id="speaker-controls">
 			<div class="speaker-controls-time">
 				<h4 class="label">Time <span class="reset-button">Click to Reset</span></h4>
@@ -388,7 +334,6 @@
 				var SPEAKER_LAYOUTS = {
 					'default': 'Default',
 					'wide': 'Wide',
-					'no-notes': 'No Notes',
 					'tall': 'Tall',
 					'notes-only': 'Notes only'
 				};
